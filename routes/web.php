@@ -1,8 +1,9 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PageController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,22 +16,32 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/',[PageController::class,'index'])->name('index');
-// Route::get('/about',[PageController::class,'about'])->name('about');
-// Route::get('/blog',[PageController::class,'blog'])->name('blog');
-// Route::get('/classes',[PageController::class,'classes'])->name('classes');
-// Route::get('/contact',[PageController::class,'contact'])->name('contact');
-// Route::get('/detail',[PageController::class,'detail'])->name('detail');
-// Route::get('/team',[PageController::class,'team'])->name('team');
-// Route::get('/testimoniol',[PageController::class,'testimoniol'])->name('testimoniol');
 
 
-// //Blog Contoller
+Route::get('/dashboard', function () {
+    return view('admin.pages.home');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::resources([
-//     'blogs',BlogController::class,
-// ]);
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+require __DIR__.'/auth.php';
+
+
+
+Route::get('/',[PageController::class,'index'])->name('index');
+Route::get('/about',[PageController::class,'about'])->name('about');
+Route::get('/bloge',[PageController::class,'bloge'])->name('bloge');
+Route::get('/classes',[PageController::class,'classes'])->name('classes');
+Route::get('/contact',[PageController::class,'contact'])->name('contact');
+Route::get('/detail',[PageController::class,'detail'])->name('detail');
+Route::get('/team',[PageController::class,'team'])->name('team');
+Route::get('/testimoniol',[PageController::class,'testimoniol'])->name('testimoniol');
+
+
+//Blog Contoller
+
+Route::resource('blog',BlogController::class);

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -11,7 +12,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        $blogs=Blog::all();
+        return view('admin.pages.home', compact('blogs'));
     }
 
     /**
@@ -19,15 +21,24 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request,)
     {
-        //
+       $blogs= Blog::create([
+            'title'=> $request->title,
+            'content'=> $request->content,
+            'description'=> $request->description,
+            'photo'=> $request->photo,
+           
+        ]);
+        $blogs->save();
+        return redirect()->back();
+
     }
 
     /**
