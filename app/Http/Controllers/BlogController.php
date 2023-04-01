@@ -29,6 +29,14 @@ class BlogController extends Controller
      */
     public function store(Request $request,)
     {
+
+        $request->validate([
+        'title'=>'required',
+        'content'=>'required',
+        'description'=>'required',
+        'photo'=>'required|image|mimes:png,jpg,jpeg|max:2048'
+        ]);
+
        $blogs= Blog::create([
             'title'=> $request->title,
             'content'=> $request->content,

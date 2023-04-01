@@ -18,7 +18,7 @@ class PageController extends Controller
         return view('pages.about');
     }
 
-    public function blog()
+    public function bloge()
     {
         return view('pages.bloge');
     }

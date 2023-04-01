@@ -20,15 +20,14 @@
           <div class="col-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Basic form elements</h4>
-                <p class="card-description"> Basic form elements </p>
+                <h4 class="card-title">Create Blog</h4>
                 <form class="forms-sample " action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
-                  <div class="form-group">
-                    <label>Title</label>
-                    <input type="text" name="title" class="form-control  text-light"  placeholder="Title">
-                  </div>
+                    <div class="form-group">
+                      <label >Title</label>
+                      <input class="form-control  text-light" name="title" rows="4">
+                    </div>
                
                  
                   {{-- <div class="form-group">
