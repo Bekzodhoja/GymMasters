@@ -26,10 +26,12 @@
 
                     <div class="form-group">
                       <label >Title</label>
-                      <input class="form-control  text-light" name="title" rows="4">
+                      <input class="form-control  text-light @error('title') is-invalid @enderror" name="title" rows="4" value="{{ old('title') }}">
+                      @error('title')
+                          <div class="alert alert-danger m-2">{{ $message }}</div>
+                      @enderror
                     </div>
-               
-                 
+
                   {{-- <div class="form-group">
                     <label for="exampleSelectGender">Gender</label>
                     <select class="form-control" id="exampleSelectGender">
@@ -40,22 +42,31 @@
 
                   <div class="form-group">
                     <label>File upload</label>
-                    <div class="input-group col-xs-12">
-                      <input type="file" class="form-control text-light">
-                      
-                    </div>
+                      <input type="file" name="photo" class="form-control  text-light @error('photo') is-invalid @enderror " rows="4" value="{{ old('photo') }}">
+                    @error('photo')
+                    <div class="alert alert-danger m-2">{{ $message }}</div>
+                    @enderror
                   </div>
 
                  
                   <div class="form-group">
                     <label >Content</label>
-                    <textarea class="form-control  text-light" name="content" rows="4"></textarea>
+                    <textarea class="form-control  text-light @error('content') is-invalid @enderror" name="content" rows="4">{{ old('content') }}</textarea>
+                    @error('content')
+                    <div class="alert alert-danger m-2">{{ $message }}</div>
+                  @enderror
                   </div>
 
                   <div class="form-group">
                     <label >Description</label>
-                    <textarea class="form-control  text-light" name="description" rows="4"></textarea>
+                    <textarea class="form-control  text-light @error('description') is-invalid @enderror" name="description" rows="4">{{ old('description') }}</textarea>
+                    @error('description')
+                    <div class="alert alert-danger m-2">{{ $message }}</div>
+                  @enderror
                   </div>
+
+
+                  
                   <button type="submit" class="btn btn-primary me-2">Submit</button>
                   <button class="btn btn-dark">Cancel</button>
                 </form>

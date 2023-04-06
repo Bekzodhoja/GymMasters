@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -20,7 +21,9 @@ class PageController extends Controller
 
     public function bloge()
     {
-        return view('pages.bloge');
+        $blogt=Blog::all();
+
+        return view('pages.bloge',compact('blogt'));
     }
 
     public function classes()

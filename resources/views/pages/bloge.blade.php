@@ -24,126 +24,27 @@
         <!-- Blog list Start -->
         <div class="col-lg-8">
             <div class="row g-5">
+                @foreach ($blogt as $bloge)
+
                 <div class="col-md-6">
                     <div class="blog-item">
                         <div class="position-relative overflow-hidden rounded-top">
-                            <img class="img-fluid" src="{{ asset('img/blog-1.jpg')}}" alt="">
+                            <img class="img-fluid" src="blog-photo/{{ $bloge->photo }}" alt="">
                         </div>
+                            
                         <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
                             <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                                <span>01</span>
-                                <h6 class="text-light text-uppercase mb-0">January</h6>
-                                <span>2045</span>
+                                    
+                                <h6 class="text-light text-uppercase mb-0">{{ $bloge->created_at }}</h6>
+
                             </div>
-                            <a class="h5 text-uppercase text-light" href="">Sed amet tempor amet sit kasd sea lorem</h4></a>
+                            <a class="h5 text-uppercase text-light" href="">{{ $bloge->title }}</h4></a>
                         </div>
+
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <div class="blog-item">
-                        <div class="position-relative overflow-hidden rounded-top">
-                            <img class="img-fluid" src="{{ asset('img/blog-2.jpg')}}" alt="">
-                        </div>
-                        <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
-                            <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                                <span>01</span>
-                                <h6 class="text-light text-uppercase mb-0">January</h6>
-                                <span>2045</span>
-                            </div>
-                            <a class="h5 text-uppercase text-light" href="">Sed amet tempor amet sit kasd sea lorem</h4></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="blog-item">
-                        <div class="position-relative overflow-hidden rounded-top">
-                            <img class="img-fluid" src="{{ asset('img/blog-3.jpg')}}" alt="">
-                        </div>
-                        <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
-                            <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                                <span>01</span>
-                                <h6 class="text-light text-uppercase mb-0">January</h6>
-                                <span>2045</span>
-                            </div>
-                            <a class="h5 text-uppercase text-light" href="">Sed amet tempor amet sit kasd sea lorem</h4></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="blog-item">
-                        <div class="position-relative overflow-hidden rounded-top">
-                            <img class="img-fluid" src="{{ asset('img/blog-1.jpg')}}" alt="">
-                        </div>
-                        <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
-                            <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                                <span>01</span>
-                                <h6 class="text-light text-uppercase mb-0">January</h6>
-                                <span>2045</span>
-                            </div>
-                            <a class="h5 text-uppercase text-light" href="">Sed amet tempor amet sit kasd sea lorem</h4></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="blog-item">
-                        <div class="position-relative overflow-hidden rounded-top">
-                            <img class="img-fluid" src="{{ asset('img/blog-2.jpg')}}" alt="">
-                        </div>
-                        <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
-                            <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                                <span>01</span>
-                                <h6 class="text-light text-uppercase mb-0">January</h6>
-                                <span>2045</span>
-                            </div>
-                            <a class="h5 text-uppercase text-light" href="">Sed amet tempor amet sit kasd sea lorem</h4></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="blog-item">
-                        <div class="position-relative overflow-hidden rounded-top">
-                            <img class="img-fluid" src="{{ asset('img/blog-3.jpg')}}" alt="">
-                        </div>
-                        <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
-                            <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                                <span>01</span>
-                                <h6 class="text-light text-uppercase mb-0">January</h6>
-                                <span>2045</span>
-                            </div>
-                            <a class="h5 text-uppercase text-light" href="">Sed amet tempor amet sit kasd sea lorem</h4></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="blog-item">
-                        <div class="position-relative overflow-hidden rounded-top">
-                            <img class="img-fluid" src="{{ asset('img/blog-1.jpg')}}" alt="">
-                        </div>
-                        <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
-                            <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                                <span>01</span>
-                                <h6 class="text-light text-uppercase mb-0">January</h6>
-                                <span>2045</span>
-                            </div>
-                            <a class="h5 text-uppercase text-light" href="">Sed amet tempor amet sit kasd sea lorem</h4></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="blog-item">
-                        <div class="position-relative overflow-hidden rounded-top">
-                            <img class="img-fluid" src="{{ asset('img/blog-2.jpg')}}" alt="">
-                        </div>
-                        <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
-                            <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
-                                <span>01</span>
-                                <h6 class="text-light text-uppercase mb-0">January</h6>
-                                <span>2045</span>
-                            </div>
-                            <a class="h5 text-uppercase text-light" href="">Sed amet tempor amet sit kasd sea lorem</h4></a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
                 <div class="col-12">
                     <nav aria-label="Page navigation">
                       <ul class="pagination pagination-lg justify-content-center m-0">

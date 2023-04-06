@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreBlogRequest;
 use App\Models\Blog;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs=Blog::all();
-        return view('admin.pages.home', compact('blogs'));
+        return view('pages.bloge', compact('blogs'));
     }
 
     /**
@@ -27,24 +28,23 @@ class BlogController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request,)
+    public function store(StoreBlogRequest $request)
     {
-
-        $request->validate([
-        'title'=>'required',
-        'content'=>'required',
-        'description'=>'required',
-        'photo'=>'required|image|mimes:png,jpg,jpeg|max:2048'
-        ]);
+        if($request->hasFile('photo')){
+            $file = $request->file('photo')->getClientOriginalName();
+            $path = $request->file('photo')->storeAs('blog-photo',$file);
+        }
+       
 
        $blogs= Blog::create([
             'title'=> $request->title,
             'content'=> $request->content,
             'description'=> $request->description,
-            'photo'=> $request->photo,
+            'photo'=> $path ?? null,
            
         ]);
-        $blogs->save();
+
+
         return redirect()->back();
 
     }
