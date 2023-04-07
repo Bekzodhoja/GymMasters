@@ -31,8 +31,8 @@ class BlogController extends Controller
     public function store(StoreBlogRequest $request)
     {
         if($request->hasFile('photo')){
-            $file = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('blog-photo',$file);
+            $name = $request->file('photo')->getClientOriginalName();
+            $path = $request->file('photo')->storeAs('blog-photos',$name);
         }
        
 
@@ -52,10 +52,10 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Blog $blog)
     {
-        //
-    }
+        $blogt=Blog::find($blog->id);
+        return view('pages.detail',compact('blog'));    }
 
     /**
      * Show the form for editing the specified resource.

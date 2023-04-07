@@ -23,8 +23,8 @@
             <div class="col-lg-8">
                 <!-- Blog Detail Start -->
                 <div class="mb-5">
-                    <img class="img-fluid w-100 rounded mb-5" src="{{ asset('img/blog-1.jpg')}}" alt="">
-                    <h1 class="text-uppercase mb-4">Diam dolor est labore duo ipsum clita sed et lorem tempor duo</h1>
+                    {{-- <img class="img-fluid w-100 rounded mb-5" src="{{ asset('storage/'.$blogt->photo)}}" alt=""> --}}
+                    {{-- <h1 class="text-uppercase mb-4">{{ $blog->title }}</h1> --}}
                     <p>Sadipscing labore amet rebum est et justo gubergren. Et eirmod ipsum sit diam ut
                         magna lorem. Nonumy vero labore lorem sanctus rebum et lorem magna kasd, stet
                         amet magna accusam consetetur eirmod. Kasd accusam sit ipsum sadipscing et at at

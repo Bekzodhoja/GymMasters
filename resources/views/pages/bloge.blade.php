@@ -29,7 +29,7 @@
                 <div class="col-md-6">
                     <div class="blog-item">
                         <div class="position-relative overflow-hidden rounded-top">
-                            <img class="img-fluid" src="blog-photo/{{ $bloge->photo }}" alt="">
+                            <img class="img-fluid" src="{{asset('storage/'.$bloge->photo) }}" alt="">
                         </div>
                             
                         <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
@@ -38,7 +38,7 @@
                                 <h6 class="text-light text-uppercase mb-0">{{ $bloge->created_at }}</h6>
 
                             </div>
-                            <a class="h5 text-uppercase text-light" href="">{{ $bloge->title }}</h4></a>
+                            <a class="h5 text-uppercase text-light" href="{{ route('detail') }}">{{ $bloge->title }}</h4></a>
                         </div>
 
                     </div>
