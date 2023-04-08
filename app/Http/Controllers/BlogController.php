@@ -54,11 +54,11 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        $blogt=Blog::find($blog->id);
-        return view('pages.detail',compact('blog'));    }
+        return view('pages.detail',compact('blog')); 
+       }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified resource.    
      */
     public function edit(string $id)
     {

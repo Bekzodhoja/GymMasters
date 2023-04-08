@@ -24,21 +24,21 @@
         <!-- Blog list Start -->
         <div class="col-lg-8">
             <div class="row g-5">
-                @foreach ($blogt as $bloge)
+                @foreach ($blogt as $blog)
 
                 <div class="col-md-6">
                     <div class="blog-item">
                         <div class="position-relative overflow-hidden rounded-top">
-                            <img class="img-fluid" src="{{asset('storage/'.$bloge->photo) }}" alt="">
+                            <img class="img-fluid" src="{{asset('storage/'.$blog->photo) }}" alt="">
                         </div>
                             
                         <div class="bg-dark d-flex align-items-center rounded-bottom p-4">
                             <div class="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
                                     
-                                <h6 class="text-light text-uppercase mb-0">{{ $bloge->created_at }}</h6>
+                                <h6 class="text-light text-uppercase mb-0">{{ $blog->created_at }}</h6>
 
                             </div>
-                            <a class="h5 text-uppercase text-light" href="{{ route('detail') }}">{{ $bloge->title }}</h4></a>
+                            <a class="h5 text-uppercase text-light" href="{{ route('blog.show',$blog->id) }}">{{ $blog->title }}</h4></a>
                         </div>
 
                     </div>

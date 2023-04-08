@@ -36,9 +36,10 @@ class PageController extends Controller
         return view('pages.contact');
     }
 
-    public function detail()
+    public function detail(Blog $blog)
     {
-        return view('pages.detail');
+        
+        return view('pages.detail',compact('blog'));
     }
 
     public function team()
