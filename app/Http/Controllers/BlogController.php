@@ -14,7 +14,7 @@ class BlogController extends Controller
     public function index()
     {
         $blogs=Blog::all();
-        return view('pages.bloge', compact('blogs'));
+        return view('admin.all', compact('blogs'));
     }
 
     /**
@@ -36,7 +36,7 @@ class BlogController extends Controller
         }
        
 
-       $blogs= Blog::create([
+            Blog::create([
             'title'=> $request->title,
             'content'=> $request->content,
             'description'=> $request->description,

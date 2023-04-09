@@ -67,7 +67,7 @@
      
 
       <li class="nav-item menu-items">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('blog.index') }}">
           <span class="menu-icon">
             <i class="mdi mdi-table-large"></i>
           </span>
