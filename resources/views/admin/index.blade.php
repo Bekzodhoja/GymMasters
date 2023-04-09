@@ -31,7 +31,8 @@
                         <th class="text-light">content</th>
                         <th class="text-light">Description</th>
                         <th class="text-light">Photo</th>
-                        <th class="text-light">Action</th>
+                        <th class="text-light">Edit</th>
+                        <th class="text-light">Delete</th>
                       </tr>
                     </thead>
                         
@@ -47,7 +48,15 @@
 
                         </td>
                         <td>
-                            <a class="btn btn-success" href="{{ route('blog.edit',['blog'=>$blog->id]) }}">Edit</a>
+                            <a class="btn btn-success" href="{{ route('blog.edit',['blog'=>$blog->id]) }}">Edit</a> 
+                      
+                        </td>
+                        <td>
+                          <form action="{{ route('blog.destroy',['blog'=>$blog->id]) }}" method="post"  enctype="multipart/form-data">
+                            @csrf
+                            @method('DELETE')
+                          <button type="submit" class="btn btn-danger " onclick="return confirm('Are you sure')">Delete</button>
+                        </form>
                         </td>
                       </tr>
                      

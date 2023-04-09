@@ -21,37 +21,37 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Create Blog</h4>
-                <form class="forms-sample" action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="forms-sample" action="{{ route('blog.update',['blog' => $blog->id]) }}" method="POST" enctype="multipart/form-data">
+                    @method('put')
                     @csrf
 
                     <div class="form-group">
                       <label >Title</label>
-                      <input class="form-control  text-light @error('title') is-invalid @enderror" name="title" rows="4" value="{{ old('title') }}">
+                      <input class="form-control  text-light @error('title') is-invalid @enderror" name="title" rows="4" value="{{ $blog->title }}">
                       @error('title')
                           <div class="alert alert-danger m-2">{{ $message }}</div>
                       @enderror
                     </div>
 
-                  {{-- <div class="form-group">
-                    <label for="exampleSelectGender">Gender</label>
-                    <select class="form-control" id="exampleSelectGender">
-                      <option>Male</option>
-                      <option>Female</option>
-                    </select>
-                  </div> --}}
+                
 
                   <div class="form-group">
                     <label>File upload</label>
-                      <input type="file" name="photo" class="form-control  text-light @error('photo') is-invalid @enderror " id="subject" rows="4" value="{{ old('photo') }}">
+                      <input type="file" name="photo" class="form-control  text-light @error('photo') is-invalid @enderror " rows="4" value="{{ $blog->photo }}">
                     @error('photo')
                     <div class="alert alert-danger m-2">{{ $message }}</div>
                     @enderror
+                    <div >
+                        <img style="width: 50px;" src="{{ asset('storage/'.$blog->photo) }}" alt="">
+
+                    </div>
+
                   </div>
 
                  
                   <div class="form-group">
                     <label >Content</label>
-                    <textarea class="form-control  text-light @error('content') is-invalid @enderror" name="content" rows="4">{{ old('content') }}</textarea>
+                    <textarea class="form-control  text-light @error('content') is-invalid @enderror" name="content" rows="4">{{ $blog->content }}</textarea>
                     @error('content')
                     <div class="alert alert-danger m-2">{{ $message }}</div>
                   @enderror
@@ -59,7 +59,7 @@
 
                   <div class="form-group">
                     <label >Description</label>
-                    <textarea class="form-control  text-light @error('description') is-invalid @enderror" name="description" rows="4">{{ old('description') }}</textarea>
+                    <textarea class="form-control  text-light @error('description') is-invalid @enderror" name="description" rows="4">{{ $blog->description }}</textarea>
                     @error('description')
                     <div class="alert alert-danger m-2">{{ $message }}</div>
                   @enderror
