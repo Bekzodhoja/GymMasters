@@ -57,7 +57,7 @@
                             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                             <div class="dropdown-menu rounded-0 m-0">
                                 <a href="{{ route('bloge') }}" class="dropdown-item">Blog Grid</a>
-                                <a href="{{ route('detail') }}" class="dropdown-item">Blog Detail</a>
+                                {{-- <a href="{{ route('detail') }}" class="dropdown-item">Blog Detail</a> --}}
                                 <a href="{{ route('testimoniol') }}" class="dropdown-item">Testimonial</a>
                             </div>
                         </div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TrainersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,4 @@ Route::get('/testimoniol',[PageController::class,'testimoniol'])->name('testimon
 //Blog Contoller
 
 Route::resource('blog',BlogController::class);
+Route::resource('team',TrainersController::class);

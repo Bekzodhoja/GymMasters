@@ -19,6 +19,7 @@
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="createbuttonDropdown">
             <h6 class="p-3 mb-0">Projects</h6>
             <div class="dropdown-divider"></div>
+
             <a href="{{ route('blog.create') }}" class="dropdown-item preview-item">
               <div class="preview-thumbnail">
                 <div class="preview-icon bg-dark rounded-circle">
@@ -29,6 +30,18 @@
                 <p class="preview-subject ellipsis mb-1">New Blog</p>
               </div>
             </a>
+
+            <a href="{{ route('team.create') }}" class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-file-outline text-primary"></i>
+                </div>
+              </div>
+              <div class="preview-item-content">
+                <p class="preview-subject ellipsis mb-1">New Trainers</p>
+              </div>
+            </a>
+
             <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item">
               <div class="preview-thumbnail">
