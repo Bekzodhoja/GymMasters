@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Trainer extends Model
 {
     use HasFactory;
-    protected $fillable=['name','age','phone','link','type','photo'];
+    protected $fillable=['name','phone','link','type','photo'];
 }

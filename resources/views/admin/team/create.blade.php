@@ -21,26 +21,52 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Create Trainers</h4>
-                <form class="forms-sample" action="{{ route('team.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="forms-sample" action="{{ route('train.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="form-group">
-                      <label >Title</label>
-                      <input class="form-control  text-light @error('title') is-invalid @enderror" name="title" rows="4" value="{{ old('title') }}">
-                      @error('title')
+                      <label >Name</label>
+                      <input class="form-control  text-light @error('name') is-invalid @enderror" name="name" rows="4" value="{{ old('name') }}">
+                      @error('name')
                           <div class="alert alert-danger m-2">{{ $message }}</div>
                       @enderror
                     </div>
 
-                  {{-- <div class="form-group">
-                    <label for="exampleSelectGender">Gender</label>
-                    <select class="form-control" id="exampleSelectGender">
-                      <option>Male</option>
-                      <option>Female</option>
-                    </select>
-                  </div> --}}
+                
 
-                  <div class="form-group">
+                    <div class="form-group">
+                      <label >Phone</label>
+                      <input class="form-control  text-light @error('phone') is-invalid @enderror" name="phone" rows="4" value="{{ old('phone') }}">
+                      @error('phone')
+                          <div class="alert alert-danger m-2">{{ $message }}</div>
+                      @enderror
+                    </div>
+
+                
+           
+
+                    <div class="form-group">
+                      <label for="exampleSelectGender" class="text-light">Type</label>
+                      <select class="form-control text-light "  @error('age') is-invalid @enderror" name="type" rows="4" value="{{ old('type') }}">
+                        <option class="text-light">Man</option>
+                        <option class="text-light">Women</option>
+                        <option class="text-light">Children</option>
+                        <option class="text-light">Old</option>
+                      </select>
+                    </div>
+
+
+                    <div class="form-inline">
+                      <label >Link to sotset</label>
+                      <input class="form-control  text-light"  @error('link') is-invalid @enderror name="link" rows="4" value="{{ old('link') }}">
+                      @error('link')
+                          <div class="alert alert-danger m-2">{{ $message }}</div>
+                      @enderror
+                    </div>
+
+                 
+
+                  <div class="form-group mt-4">
                     <label>File upload</label>
                       <input type="file" name="photo" class="form-control  text-light @error('photo') is-invalid @enderror " id="subject" rows="4" value="{{ old('photo') }}">
                     @error('photo')
@@ -48,27 +74,10 @@
                     @enderror
                   </div>
 
-                 
-                  <div class="form-group">
-                    <label >Content</label>
-                    <textarea class="form-control  text-light @error('content') is-invalid @enderror" name="content" rows="4">{{ old('content') }}</textarea>
-                    @error('content')
-                    <div class="alert alert-danger m-2">{{ $message }}</div>
-                  @enderror
-                  </div>
-
-                  <div class="form-group">
-                    <label >Description</label>
-                    <textarea class="form-control  text-light @error('description') is-invalid @enderror" name="description" rows="4">{{ old('description') }}</textarea>
-                    @error('description')
-                    <div class="alert alert-danger m-2">{{ $message }}</div>
-                  @enderror
-                  </div>
 
 
                   
                   <button type="submit" class="btn btn-primary me-2">Submit</button>
-                  <button class="btn btn-dark">Cancel</button>
                 </form>
               </div>
             </div>

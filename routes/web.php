@@ -46,4 +46,4 @@ Route::get('/testimoniol',[PageController::class,'testimoniol'])->name('testimon
 //Blog Contoller
 
 Route::resource('blog',BlogController::class);
-Route::resource('team',TrainersController::class);
+Route::resource('train',TrainersController::class);

@@ -31,7 +31,7 @@
               </div>
             </a>
 
-            <a href="{{ route('team.create') }}" class="dropdown-item preview-item">
+            <a href="{{ route('train.create') }}" class="dropdown-item preview-item">
               <div class="preview-thumbnail">
                 <div class="preview-icon bg-dark rounded-circle">
                   <i class="mdi mdi-file-outline text-primary"></i>

@@ -34,7 +34,7 @@ class BlogController extends Controller
         if($request->hasFile('photo')){
             $name = $request->file('photo')->getClientOriginalName();
             $path = $request->file('photo')->storeAs('blog-photos',$name);
-        }
+        }   
        
 
             Blog::create([

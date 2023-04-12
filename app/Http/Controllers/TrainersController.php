@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Trainer;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreTeamRequest;
+use App\Http\Requests\StoretrainRequest;
 
 class TrainersController extends Controller
 {
@@ -25,9 +28,21 @@ class TrainersController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreTeamRequest $request)
     {
-        //
+        if($request->hasFile('photo')){
+            $name=$request->file('photo')->getClientOriginalName();
+            $path=$request->file('photo')->storeAs('train-photo',$name);
+
+        }
+       Trainer::create([
+        'name'=>$request->name,
+        'type'=>$request->type,
+        'link'=>$request->link,
+        'phone'=>$request->phone,
+        'photo'=>$path ?? null,
+       ]);
+                return redirect()->back();
     }
 
     /**
