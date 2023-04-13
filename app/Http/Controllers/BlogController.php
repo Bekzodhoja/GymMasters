@@ -12,10 +12,10 @@ class BlogController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Blog $blog)
     {
-        $blogs=Blog::all();
-        return view('pages.bloge');
+        $blog=Blog::all();
+        return view('admin.index',compact('blog'));
     }
 
     /**

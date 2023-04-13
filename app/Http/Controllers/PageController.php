@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Trainer;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -42,9 +43,10 @@ class PageController extends Controller
         return view('pages.detail',compact('blog'));
     }
 
-    public function team()
+    public function team(Trainer $trainers)
     {
-        return view('pages.team');
+        $trainers=Trainer::all();
+        return view('pages.team',compact('trainers'));
     }
 
     public function testimoniol()

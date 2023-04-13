@@ -21,12 +21,13 @@
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">Create Trainers</h4>
-                <form class="forms-sample" action="{{ route('train.store') }}" method="POST" enctype="multipart/form-data">
+                <form class="forms-sample" action="{{ route('train.update',['train'=>$train->id]) }}" method="POST" enctype="multipart/form-data">
+                  @method('put')
                     @csrf
 
                     <div class="form-group">
                       <label >Name</label>
-                      <input class="form-control  text-light @error('name') is-invalid @enderror" name="name" rows="4" value="{{ old('name') }}">
+                      <input class="form-control  text-light @error('name') is-invalid @enderror" name="name" rows="4" value="{{ $train->name }}">
                       @error('name')
                           <div class="alert alert-danger m-2">{{ $message }}</div>
                       @enderror
@@ -36,7 +37,7 @@
 
                     <div class="form-group">
                       <label >Phone</label>
-                      <input class="form-control  text-light @error('phone') is-invalid @enderror" name="phone" rows="4" value="{{ old('phone') }}">
+                      <input class="form-control  text-light @error('phone') is-invalid @enderror" name="phone" rows="4" value="{{ $train->phone }}">
                       @error('phone')
                           <div class="alert alert-danger m-2">{{ $message }}</div>
                       @enderror
@@ -47,7 +48,7 @@
 
                     <div class="form-group">
                       <label for="exampleSelectGender" class="text-light">Type</label>
-                      <select class="form-control text-light "  @error('age') is-invalid @enderror" name="type" rows="4" value="{{ old('type') }}">
+                      <select class="form-control text-light "  @error('age') is-invalid @enderror" name="type" rows="4" value="{{ $train->type }}">
                         <option class="text-light">Man</option>
                         <option class="text-light">Women</option>
                         <option class="text-light">Children</option>
@@ -58,7 +59,7 @@
 
                     <div class="form-inline">
                       <label >Link to Telegram</label>
-                      <input class="form-control  text-light"  @error('link') is-invalid @enderror name="link" rows="4" value="{{ old('link') }}">
+                      <input class="form-control  text-light"  @error('link') is-invalid @enderror name="link" rows="4" value="{{ $train->link }}">
                       @error('link')
                           <div class="alert alert-danger m-2">{{ $message }}</div>
                       @enderror
@@ -68,10 +69,11 @@
 
                   <div class="form-group mt-4">
                     <label>File upload</label>
-                      <input type="file" name="photo" class="form-control  text-light @error('photo') is-invalid @enderror " id="subject" rows="4" value="{{ old('photo') }}">
+                      <input type="file" name="photo" class="form-control  text-light"  rows="4">
                     @error('photo')
                     <div class="alert alert-danger m-2">{{ $message }}</div>
                     @enderror
+                    <img style="width: 80px" src="{{ asset('storage/'.$train->photo) }}" alt="">
                   </div>
 
 

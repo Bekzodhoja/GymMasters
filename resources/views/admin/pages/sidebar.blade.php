@@ -71,7 +71,16 @@
           <span class="menu-icon">
             <i class="mdi mdi-table-large"></i>
           </span>
-          <span class="menu-title">Tables</span>
+          <span class="menu-title">Blog Table</span>
+        </a>
+      </li>
+
+      <li class="nav-item menu-items">
+        <a class="nav-link" href="{{ route('train.index') }}">
+          <span class="menu-icon">
+            <i class="mdi mdi-table-large"></i>
+          </span>
+          <span class="menu-title">Trainers Table</span>
         </a>
       </li>
      

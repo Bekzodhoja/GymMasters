@@ -27,9 +27,10 @@
                   <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th class="text-light">Title</th>
-                        <th class="text-light">content</th>
-                        <th class="text-light">Description</th>
+                        <th class="text-light">Name</th>
+                        <th class="text-light">Phone</th>
+                        <th class="text-light">Type</th>
+                        <th class="text-light">Link</th>
                         <th class="text-light">Photo</th>
                         <th class="text-light">Edit</th>
                         <th class="text-light">Delete</th>
@@ -37,30 +38,36 @@
                     </thead>
                         
                     <tbody>
-                        @foreach ($blog as $blog)
+                        @foreach ($trainers as $trainer)
 
                       <tr>
-                        <td>{{ $blog->title }}</td>
-                        <td>{{ $blog->content }}</td>
-                        <td>{{ $blog->description }}</td>
+                        <td>{{ $trainer->name }}</td>
+                        <td>{{ $trainer->phone }}</td>
+                        <td>{{ $trainer->type }}</td>
+                        <td>{{ $trainer->link }}</td>
                         <td class="text-center">
-                                <img   style="width: 100px; height:100px" src="{{ asset('storage/'.$blog->photo) }}" alt="">
+                                <img   style="width: 100px; height:100px" src="{{ asset('storage/'.$trainer->photo) }}" alt="">
 
                         </td>
+
+                        
                         <td>
-                            <a class="btn btn-success" href="{{ route('blog.edit',['blog'=>$blog->id]) }}">Edit</a> 
+                            <a class="btn btn-success" href="{{ route('train.edit',$trainer->id) }}">Edit</a> 
                       
                         </td>
                         <td>
-                          <form action="{{ route('blog.destroy',['blog'=>$blog->id]) }}" method="post"  enctype="multipart/form-data">
+                          <form action="{{ route('train.destroy',$trainer->id) }}" method="POST"  enctype="multipart/form-data">
                             @csrf
                             @method('DELETE')
                           <button type="submit" class="btn btn-danger " onclick="return confirm('Are you sure')">Delete</button>
                         </form>
+
                         </td>
+
+                        @endforeach
+
                       </tr>
                      
-                      @endforeach
 
                     </tbody>
                   </table>
