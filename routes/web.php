@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TrainersController;
@@ -47,3 +48,4 @@ Route::get('/testimoniol',[PageController::class,'testimoniol'])->name('testimon
 
 Route::resource('blog',BlogController::class);
 Route::resource('train',TrainersController::class);
+Route::resource('classe',ClassesController::class);

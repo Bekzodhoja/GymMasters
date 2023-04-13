@@ -42,6 +42,18 @@
               </div>
             </a>
 
+            
+            <a href="{{ route('classe.create') }}" class="dropdown-item preview-item">
+              <div class="preview-thumbnail">
+                <div class="preview-icon bg-dark rounded-circle">
+                  <i class="mdi mdi-file-outline text-primary"></i>
+                </div>
+              </div>
+              <div class="preview-item-content">
+                <p class="preview-subject ellipsis mb-1">New Classes</p>
+              </div>
+            </a>
+
             <div class="dropdown-divider"></div>
             <a class="dropdown-item preview-item">
               <div class="preview-thumbnail">
