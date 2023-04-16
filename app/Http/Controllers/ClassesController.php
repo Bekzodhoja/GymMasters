@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreClassesRequest;
+use App\Models\Classe;
 use Illuminate\Http\Request;
 
 class ClassesController extends Controller
@@ -25,9 +27,14 @@ class ClassesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreClassesRequest $request)
     {
-        //
+       $classe= Classe::create([
+            'name'=>$request->name,
+            'type'=>$request->type,
+            'day'=>$request->day
+        ]);
+        return redirect()->route('dashboard');
     }
 
     /**

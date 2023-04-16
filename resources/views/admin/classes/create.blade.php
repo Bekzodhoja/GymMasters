@@ -20,8 +20,8 @@
           <div class="col-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h4 class="card-title">Create Trainers</h4>
-                <form class="forms-sample" action="{{ route('classe.store') }}" method="POST" enctype="multipart/form-data">
+                <h4 class="card-title">Create Classes</h4>
+                <form class="forms-sample" action="{{ route('classe.store') }}" method="POST">
                     @csrf
 
                     <div class="form-group">
@@ -37,12 +37,7 @@
                         </select>
                       </div>
 
-                      <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Time</label>
-                        <div>
-                          <input class="form-control text-light" placeholder="h:m-h:m" />
-                        </div>
-                      </div>
+                  
                       
                     <div class="form-group">
                         <label for="exampleSelectGender" class="text-light">Type</label>
@@ -66,12 +61,7 @@
                       @enderror
                     </div>
 
-                
-
-
-
-
-                  
+       
                   <button type="submit" class="btn btn-primary me-2 m-2">Submit</button>
                 </form>
               </div>
